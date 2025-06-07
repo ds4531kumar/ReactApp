@@ -27,10 +27,12 @@ export default function OrderSummary() {
                         <Typography color="textSecondary">Subtotal</Typography>
                         <Typography>{currencyFormat(subtotal)}</Typography>
                     </Box>
-                    {/* <Box display="flex" justifyContent="space-between" mb={1}>
-            <Typography color="textSecondary">Discount</Typography>
-            <Typography color="success">-{currencyFormat(discount)}</Typography>
-          </Box> */}
+                    <Box display="flex" justifyContent="space-between" mb={1}>
+                        <Typography color="textSecondary">Discount</Typography>
+                        <Typography color="success">
+                            {/* {currencyFormat(discount)} */}
+                        </Typography>
+                    </Box>
                     <Box display="flex" justifyContent="space-between" mb={1}>
                         <Typography color="textSecondary">
                             Delivery fee
@@ -47,18 +49,16 @@ export default function OrderSummary() {
                 </Box>
 
                 <Box mt={2}>
-                    {!location.pathname.includes("checkout") && (
-                        <Button
-                            component={Link}
-                            to="/checkout"
-                            variant="contained"
-                            color="primary"
-                            fullWidth
-                            sx={{ mb: 1 }}
-                        >
-                            Checkout
-                        </Button>
-                    )}
+                    <Button
+                        component={Link}
+                        to="/checkout"
+                        variant="contained"
+                        color="primary"
+                        fullWidth
+                        sx={{ mb: 1 }}
+                    >
+                        Checkout
+                    </Button>
                     <Button component={Link} to="/catalog" fullWidth>
                         Continue Shopping
                     </Button>
